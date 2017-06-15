@@ -2,9 +2,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import store from '../store';
-import { Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import BackgroundColor from '../components/toolControls/background-color';
+import DrawingMode from '../components/toolControls/drawing-mode';
+import TextMode from '../components/toolControls/text-mode';
 
 
 class Tool extends React.Component {
@@ -15,12 +17,16 @@ class Tool extends React.Component {
         };
     }
     render(){
-        if(this.props.open === this.props.name){
-            const path = this.props.name.replace(/\s/g, '').toLowerCase();
+        const path = this.props.name.replace(/\s/g, '').toLowerCase();
+        if(location.pathname.includes(path)){
             return <Link to={"/newcard/" + path} >
                 <div className="toolbox-item shadow" onClick={() => toolClick(this)}>
                     <p className="toolbox-title">{this.props.name}</p>
-                    <BackgroundColor/>
+                    <Switch>
+                        <Route path='/newcard/backgroundcolor' component={BackgroundColor}/>
+                        <Route path='/newcard/drawingmode' component={DrawingMode}/>
+                        <Route path='/newcard/textmode' component={TextMode}/>
+                    </Switch>
                 </div>
             </Link>
         }else{
@@ -68,6 +74,7 @@ function toolClick(e){
                 type: 'LINKS_MODE'
             });
             break;
+        default:
     }
 
 }

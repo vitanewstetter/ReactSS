@@ -6,11 +6,15 @@
 
 import store from '../store';
 
+import {currentH, currentL, currentW, currentF} from '../components/toolControls/drawing-mode';
+
+
 var currentCanvas = 1;
 
 var brushH = 60;
 var brushL = 50;
 var brushW = 20;
+var brushF = 5;
 
 // var link = '';
 
@@ -32,10 +36,14 @@ export function canvasBackground(f){
 }
 
 
-var draw_circle = function(can, ctx, x, y, color) {
+var draw_circle = function(can, ctx, x, y, color, blur) {
+    var temp = window.innerWidth;
     x -= can.offsetLeft; // Get mouse pos. in relationship to canvas.
-    y -= can.offsetTop;
+    y -= can.offsetTop + 135;
+    //ctx.globalCompositeOperation = 'source-over';
     ctx.fillStyle = color;
+    ctx.shadowColor = color;
+    ctx.shadowBlur = blur;
     ctx.beginPath();
     ctx.arc(x ,y , brushW, 0, 2*Math.PI);
     ctx.fill();
@@ -46,15 +54,24 @@ var last_x, last_y, current_x, current_y;
 
 //drawing functions
 window.onmousedown = function (e) {
-    if(store.getState().menuShowing.menuShowing == false){
-        currentColor = "hsl(" + brushH + ", 90%, " + brushL + "%)";
+    if(store.getState().menuShowing.menuShowing === false){
+        brushH = currentH;
+        brushL = currentL;
+        brushW = currentW - currentF/2;
+        brushF = currentF;
+
+        if(brushW < 0){
+            brushW = 2;
+        }
+
+        currentColor = "rgb(" + hslToRgb(brushH/360, 0.9, brushL/100) + ")";
         last_x = e.x;
         last_y = e.y;
         current_x = e.x;
         current_y = e.y;
 
         if(currentCanvas === 1){
-            draw_circle(canF, ctxF, current_x, current_y, currentColor);
+            draw_circle(canF, ctxF, current_x, current_y, currentColor, brushF);
         }
 
         store.dispatch({
@@ -66,7 +83,7 @@ window.onmousedown = function (e) {
 
 window.onmousemove = function (e) {
     if (is_drawing === true) {
-        currentColor = "hsl(" + brushH + ", 90%, " + brushL + "%)";
+        currentColor = "rgb(" + hslToRgb(brushH/360, 0.9, brushL/100) + ")";
         current_x = e.x;
         current_y = e.y;
 
@@ -76,7 +93,7 @@ window.onmousemove = function (e) {
             var x_inside = last_x + (current_x - last_x) * progress;
             var y_inside = last_y + (current_y - last_y) * progress;
             if(currentCanvas === 1){
-                draw_circle(canF, ctxF, x_inside, y_inside, currentColor);
+                draw_circle(canF, ctxF, x_inside, y_inside, currentColor, brushF);
             }
             progress += 0.05;
         }
@@ -90,16 +107,16 @@ window.onmousemove = function (e) {
 };
 
 window.onmouseup = function (e) {
-    if(is_drawing == true){
+    if(is_drawing === true){
         store.dispatch({
             type: 'MENU_LEAVE'
         });
     }
-    currentColor = "hsl(" + brushH + ", 90%, " + brushL + "%)";
+    currentColor = "rgb(" + hslToRgb(brushH/360, 0.9, brushL/100) + ")";
     current_x = e.x;
     current_y = e.y;
     if(currentCanvas === 1){
-        draw_circle(canF, ctxF, current_x, current_y, currentColor);
+        draw_circle(canF, ctxF, current_x, current_y, currentColor, brushF);
     }
 
     is_drawing = false;
@@ -144,12 +161,12 @@ window.onmouseup = function (e) {
 
 
 
-// function getWidth() {
-//     if (self.innerWidth) {return self.innerWidth;}
-//     if (document.documentElement && document.documentElement.clientWidth) {
-//         return document.documentElement.clientWidth;}
-//     if (document.body) { return document.body.clientWidth;}}
-//
+function getWidth() {
+    if (self.innerWidth) {return self.innerWidth;}
+    if (document.documentElement && document.documentElement.clientWidth) {
+        return document.documentElement.clientWidth;}
+    if (document.body) { return document.body.clientWidth;}}
+
 // function getHeight() {
 //     if (self.innerHeight) {return self.innerHeight;}
 //     if (document.documentElement && document.documentElement.clientHeight) {
@@ -160,3 +177,26 @@ window.onmouseup = function (e) {
 
 
 
+function hslToRgb(h, s, l){
+    var r, g, b;
+    if(s === 0){
+        r = g = b = l; // achromatic
+    }else{
+        var hue2rgb = function hue2rgb(p, q, t){
+            if(t < 0) t += 1;
+            if(t > 1) t -= 1;
+            if(t < 1/6) return p + (q - p) * 6 * t;
+            if(t < 1/2) return q;
+            if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        }
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}

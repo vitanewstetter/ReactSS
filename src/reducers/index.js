@@ -1,4 +1,4 @@
-import React from 'react';
+
 import menuShowing from './menu-showing-reducer';
 import appMode from './app-mode-reducer';
 import color from './color-manager-reducer';

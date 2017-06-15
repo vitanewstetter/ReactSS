@@ -99,6 +99,8 @@ a{
 
 }
 
+/*tool controls*/
+
 /* color picker  */
 #colorPicker{
     margin: auto;
@@ -134,8 +136,48 @@ a{
     background: linear-gradient(to right, hsl(255, 90%, 0%), hsl(255, 90%, 50%), hsl(255, 90%, 100%));
 }
 
+/*drawing mode*/
+#current-brush{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+
+.other-input{
+    color: black;
+    position: relative;
+    width: calc(100% - 20px);
+    -webkit-appearance: none;
+    margin: 10px 10px;
+    background: rgb(220, 220, 220);
+    height: 5px;
+}
+.other-input:focus {
+    outline: none;
+}
+.other-input::-webkit-slider-thumb {
+    box-shadow: 1.8px 1.8px 4.2px rgba(0, 0, 0, 0.22), 0px 0px 1.8px rgba(13, 13, 13, 0.22);
+    height: 12px;
+    width: 12px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin: -6px
+}
+
+/* text mode */
+
+#add-text{
+    margin: 20px;
+    padding: 5px 10px;
+}
 
 .shadow{
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 }
+
