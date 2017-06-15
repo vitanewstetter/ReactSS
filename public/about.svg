@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="129px" height="120px" viewBox="0 0 129 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>about</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-659.000000, -632.000000)" fill="#FFFFFF">
+            <g id="actions" transform="translate(646.000000, 268.000000)">
+                <g id="about" transform="translate(13.000000, 364.000000)">
+                    <text id="more-info" font-family="FiraSans-ExtraBold, Fira Sans" font-size="24" font-weight="600" letter-spacing="1.27999997">
+                        <tspan x="7.21600013" y="119">more info</tspan>
+                    </text>
+                    <g id="question-mark" transform="translate(39.000000, 0.000000)" fill-rule="nonzero">
+                        <path d="M24.1,0 C11.1,0 0.4,9.51111111 0.4,21.0666667 C0.4,24.5333333 3.7,27.4666667 7.7,27.4666667 C11.8,27.4666667 15,24.5333333 15,21.0666667 C15,16.6222222 19.1,12.9777778 24.1,12.9777778 C29,12.9777778 33,16.6222222 33,21.0666667 C33,25.1555556 31,27.2 27.3,30.9333333 C22.7,35.1111111 16.6,40.8888889 16.6,51.9111111 C16.6,55.6444444 19.9,58.4888889 24,58.4888889 C28,58.4888889 31.2,55.6444444 31.2,51.9111111 C31.2,45.9555556 34,43.2888889 37.8,39.7333333 C42.1,35.5555556 47.4,30.4888889 47.4,20.9777778 C47.6,9.51111111 37.1,0 24.1,0 L24.1,0 Z M24.1,64.3555556 C19.2,64.3555556 15.2,67.7333333 15.2,72.1777778 C15.2,76.5333333 19.2,80 24.1,80 C28.8,80 32.9,76.5333333 32.9,72.1777778 C32.9,67.8222222 28.9,64.3555556 24.1,64.3555556 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

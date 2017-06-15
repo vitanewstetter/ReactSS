@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="122px" height="150px" viewBox="0 0 122 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>new card</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-660.000000, -268.000000)" fill="#FFFFFF">
+            <g id="actions" transform="translate(646.000000, 268.000000)">
+                <g id="new-card" transform="translate(13.000000, 0.000000)">
+                    <g id="plus" transform="translate(25.000000, 0.000000)">
+                        <path d="M40,30.2926136 L40,15.2938022 C40,12.5258034 37.7614237,10.2926136 35,10.2926136 C32.2441952,10.2926136 30,12.531722 30,15.2938022 L30,30.2926136 L15.0011886,30.2926136 C12.2331897,30.2926136 10,32.5311899 10,35.2926136 C10,38.0484184 12.2391084,40.2926136 15.0011886,40.2926136 L30,40.2926136 L30,56.1209705 C30,58.8889693 32.2385763,61.1221591 35,61.1221591 C37.7558048,61.1221591 40,58.8830507 40,56.1209705 L40,40.2926136 L55.8283568,40.2926136 C58.5963557,40.2926136 60.8295455,38.0540374 60.8295455,35.2926136 C60.8295455,32.5368088 58.590437,30.2926136 55.8283568,30.2926136 L40,30.2926136 Z M35.5,71 C15.8938914,71 0,55.1061086 0,35.5 C0,15.8938914 15.8938914,0 35.5,0 C55.1061086,0 71,15.8938914 71,35.5 C71,55.1061086 55.1061086,71 35.5,71 Z" id="Combined-Shape"></path>
+                    </g>
+                    <text id="Make-a-new-card" font-family="FiraSans-ExtraBold, Fira Sans" font-size="24" font-weight="600" letter-spacing="1.27999997">
+                        <tspan x="19.9960001" y="115">Make a</tspan>
+                        <tspan x="8.06000011" y="149">new card</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

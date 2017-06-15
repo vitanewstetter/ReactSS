@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 1.1px;
+    user-select: none;
+}
+
+/*styling for containers*/
+
+#app{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+#app-header{
+    width: 100%;
+    position: absolute;
+}
+#app-background{
+    width: 110vw;
+    height: 110vh;
+    top: -5vh;
+    left: -5vw;
+    position: fixed;
+    z-index: -10;
+}
+#app-body{
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 1300px;
+    margin-top: 135px;
+    transition: all 1s;
+}
+#menu-dropdown{
+    width: 150px;
+    position: absolute;
+    border-radius: 2px;
+    left: 50%;
+    transform: translate(-50%, 115px);
+    padding: 10px;
+    z-index: 10;
+}
+#toolbox{
+    position: absolute;
+    margin-left: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*styling for components*/
+.logo{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    padding: 20px 0px;
+}
+.menu-icon{
+    width: 70%;
+    margin-left: 15%;
+}
+canvas{
+    width: 400px;
+    height: 550px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+/* tools section */
+.toolbox-title{
+    color: #6316FF;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 10px;
+    font-size: 13px;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.toolbox-item{
+    background-color: white;
+    flex-grow: 1;
+    margin: 0px 0px 10px 0px;
+}
+.tool-controls{
+    width: 100%;
+    height: auto;
+    padding: 10px 0px;
+
+}
+
+/* color picker  */
+#colorPicker{
+    margin: auto;
+    padding: 0px 10px;
+}
+.color-input{
+    color: black;
+    position: relative;
+    width: calc(100% - 20px);
+    -webkit-appearance: none;
+    margin: 10px 10px;
+
+}
+.color-input:focus {
+    outline: none;
+}
+.color-input::-webkit-slider-thumb {
+    box-shadow: 1.8px 1.8px 4.2px rgba(0, 0, 0, 0.22), 0px 0px 1.8px rgba(13, 13, 13, 0.22);
+    height: 28px;
+    width: 18px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin: -6px
+}
+.rangeH{
+    background: linear-gradient(to right, hsl(0, 90%, 50%), hsl(30, 90%, 50%), hsl(60, 90%, 50%), hsl(90, 90%, 50%),
+    hsl(120, 90%, 50%), hsl(150, 90%, 50%), hsl(180, 90%, 50%), hsl(210, 90%, 50%), hsl(240, 90%, 50%),
+    hsl(270, 90%, 50%), hsl(300, 90%, 50%), hsl(330, 90%, 50%), hsl(360, 90%, 50%));
+}
+.rangeL{
+    background: linear-gradient(to right, hsl(255, 90%, 0%), hsl(255, 90%, 50%), hsl(255, 90%, 100%));
+}
+
+
+.shadow{
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
