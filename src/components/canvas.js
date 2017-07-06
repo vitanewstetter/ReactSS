@@ -1,6 +1,6 @@
 import React from 'react';
 
-import setCanvas from '../js-css/drawing';
+import setCanvas from '../js-css/addToCanvas';
 
 window.onload = function(){
     setCanvas();

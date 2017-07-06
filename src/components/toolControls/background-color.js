@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ColorPicker from '../colorPicker';
-import { canvasBackground } from '../../js-css/drawing';
+import { canvasBackground } from '../../js-css/addToCanvas';
 
 class BackgroundColor extends React.Component {
     componentWillUpdate(){

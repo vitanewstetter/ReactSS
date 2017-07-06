@@ -73,7 +73,9 @@ button{
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0px);
+    cursor: pointer;
 }
+button:focus {outline:0;}
 
 /* tools section */
 .toolbox-title{
@@ -170,10 +172,29 @@ a{
 }
 
 /* text mode */
-
-#add-text{
+#text-input{
     margin: 20px;
+}
+#add-text{
     padding: 5px 10px;
+    display: inline-block;
+}
+#text-preview{
+    color: black;
+    padding: 10px 20px;
+    cursor: default;
+}
+#preview-button{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    left: inherit;
+    padding: 5px 10px;
+    background-color: white;
+    border: 2px solid hsl(255, 90%, 50%);
+    color: hsl(255, 90%, 50%);
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
 .shadow{
